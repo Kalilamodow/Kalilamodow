@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Kalilamodow
-- 👀 I’m interested in game development in Unity
-- 🌱 I’m currently learning C#
-- 💞️ I’m looking to collaborate on nothing right now
+- 👀 I’m interested in game development in Scratch (lol)
+- 🌱 I’m currently learning nothing
+- 💞️ I’m looking to collaborate on nothing
 - 📫 How to reach me ___
 
 <!---
