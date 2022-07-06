@@ -1,8 +1,8 @@
 - 👋 Hi, I’m @Kalilamodow
-- 👀 I’m interested in game development in Scratch (lol)
-- 🌱 I’m currently learning nothing
-- 💞️ I’m looking to collaborate on nothing
-- 📫 How to reach me ___
+- 👀 I’m interested in web development
+- 🌱 I’m currently learning php
+- 💞️ I’m looking to collaborate on anything
+- 📫 How to reach me no
 
 <!---
 Kalilamodow/Kalilamodow is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
