@@ -1,8 +1,7 @@
 - 👋 Hi, I’m @Kalilamodow
-- 👀 I’m interested in web development
-- 🌱 I’m currently learning php
-- 💞️ I’m looking to collaborate on anything
-- 📫 How to reach me no
+- 👀 I’m interested in literally anything
+- 🌱 I’m currently learning C
+- 💞️ I’m looking to collaborate on anything (keep in mind that I am terrible at programming)
 
 <!---
 Kalilamodow/Kalilamodow is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
