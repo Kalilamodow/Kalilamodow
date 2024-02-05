@@ -1,3 +1,3 @@
 - 👋 Hi, I’m @Kalilamodow
 - 👀 I’m interested in Python & Javascript
-- 🌱 I’m currently expanding my knowledge of the stuff I already know
+- 🌱 I’m currently (attempting) making games in Unity
