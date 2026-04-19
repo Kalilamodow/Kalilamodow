@@ -1,3 +1,5 @@
+[![GitHub Streak](https://github-readme-streak-stats-eight.vercel.app?user=Kalilamodow&theme=dark&hide_border=true&border_radius=4)](https://git.io/streak-stats)
+
 I am a fullstack web dev, mainly with Python on the backend. I enjoy using Svelte on the frontend.
 
 I am on FRC team 4778 (where I am the programming lead) and FTC team 9415.
