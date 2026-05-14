@@ -2,7 +2,7 @@
 
 I am a fullstack web dev, mainly with Python on the backend. I enjoy using Svelte on the frontend.
 
-I have also done quite a bit of C/C++, but I am still learning (check out [https://github.com/Kalilamodow/minispot/](minispot)!)
+I have also done quite a bit of C/C++, but I am still learning (check out https://github.com/Kalilamodow/minispot!)
 
 I've done C#, but it's limited to Unity.
 
