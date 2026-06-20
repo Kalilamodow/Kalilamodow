@@ -1,8 +1,6 @@
 [![GitHub Streak](https://github-readme-streak-stats-eight.vercel.app?user=Kalilamodow&theme=dark&hide_border=true&border_radius=4)](https://git.io/streak-stats)
 
-I am a fullstack web dev, mainly with Python on the backend. I enjoy using Svelte on the frontend.
-
-I have also done quite a bit of C/C++, but I am still learning (check out https://github.com/Kalilamodow/minispot!)
+I've mostly done fullstack webdev with Python on the backend, with my favorite frontend being Svelte. I have started to get into native development though, especially with C++ (check out [minispot](https://github.com/Kalilamodow/minispot)) and Rust (check out [lobby-ranks](https://github.com/Kalilamodow/lobby-ranks)).
 
 I've done C#, but it's limited to Unity.
 
