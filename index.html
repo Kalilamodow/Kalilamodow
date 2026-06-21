@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kalilamodow</title>
+
+        <style>
+            html {
+                background-color: #24273a;
+                font-family: sans-serif;
+
+                color: #cad3f5;
+                font-size: 16px;
+            }
+
+            button,
+            a.btn {
+                font-family: monospace;
+                background-color: #363a4f;
+                padding: 8px 16px;
+                border: none;
+                font-size: 1rem;
+                color: #a5adcb;
+                cursor: pointer;
+                text-decoration: none;
+                text-align: center;
+                margin-bottom: 8px;
+
+                transition: color 150ms;
+            }
+
+            button:hover,
+            a.btn:hover {
+                color: #cad3f5;
+            }
+        </style>
+
+        <style>
+            body {
+                position: fixed;
+                inset: 0;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            main {
+                display: grid;
+                grid-template-rows: repeat(4, auto);
+                grid-template-columns: repeat(2, auto);
+                column-gap: 8px;
+            }
+
+            header {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            h1 {
+                font-size: 36px;
+                line-height: 36px;
+                margin: 0;
+                padding-bottom: 4px;
+                border-bottom: 4px solid #a6da95;
+            }
+
+            header img {
+                border-radius: 100%;
+                object-fit: cover;
+            }
+
+            div#project-list-container {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 500ms ease 250ms;
+
+                display: flex;
+                flex-direction: column;
+            }
+            div#project-list-container.open {
+                max-height: 25vh;
+                transition: max-height 500ms ease;
+            }
+
+            div#project-list {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 4px;
+            }
+
+            div#project-list button {
+                background-color: #494d64;
+            }
+
+            div#project-preview-container {
+                max-width: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition:
+                    max-width 500ms ease 0ms,
+                    max-height 500ms ease 250ms;
+            }
+            div#project-preview-container.open {
+                max-width: 250px;
+                max-height: 25vh;
+                transition:
+                    max-width 500ms ease 250ms,
+                    max-height 500ms ease 0ms;
+            }
+            div#project-preview-container.close-y {
+                max-height: 0;
+                transition: max-height 500ms ease 250ms;
+            }
+
+            div#project-preview {
+                background-color: #181926;
+                height: calc(100% - 36px);
+                padding: 12px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            div#project-preview h3 {
+                width: 226px;
+                color: #a5adcb;
+                margin: 0;
+                font-family: monospace;
+            }
+            div#project-preview p {
+                margin-top: 12px;
+                width: 226px;
+            }
+            div#project-preview > a {
+                margin-bottom: 0;
+                opacity: 100%;
+                transition: opacity 250ms ease 600ms;
+            }
+            div#project-preview > a.hide {
+                opacity: 0%;
+                transition: opacity 250ms ease 0ms;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <header>
+                <img src="./pfp.jpg" alt="Avatar" height="48" width="48" />
+                <h1>Kalilamodow</h1>
+            </header>
+            <div></div>
+
+            <button type="button" id="projects-btn">Some Projects</button>
+            <div></div>
+
+            <div id="project-list-container">
+                <div id="project-list">
+                    <button type="button" data-project="lobby-ranks">
+                        Lobby ranks
+                    </button>
+                    <button type="button" data-project="minispot">
+                        minispot
+                    </button>
+                    <button type="button" data-project="smanage-rs">
+                        smanage
+                    </button>
+                    <button type="button" data-project="tracing">
+                        Tracing
+                    </button>
+                </div>
+            </div>
+
+            <div id="project-preview-container">
+                <div id="project-preview">
+                    <h3>Select a project</h3>
+                    <p></p>
+
+                    <div style="flex: 1"></div>
+                    <a href="" class="btn hide">Project GitHub</a>
+                </div>
+            </div>
+
+            <a class="btn" href="https://github.com/Kalilamodow">Github</a>
+            <div></div>
+        </main>
+    </body>
+
+    <script>
+        const PROJECTS = {
+            "lobby-ranks": {
+                language: "Rust",
+                description: "A simple yet useful overlay for Rocket League.",
+            },
+            minispot: {
+                language: "C++",
+                description: "A small, self-contained WebView2 Spotify player.",
+            },
+            "smanage-rs": {
+                language: "Rust",
+                description: "Easy server configuration generation.",
+            },
+            tracing: {
+                language: "Svelte",
+                description: "Practice tracing images.",
+            },
+        };
+
+        document
+            .getElementById("projects-btn")
+            .addEventListener("click", () => {
+                document
+                    .getElementById("project-list-container")
+                    .classList.toggle("open");
+                document
+                    .getElementById("project-preview-container")
+                    .classList.toggle("open");
+            });
+
+        let curSelected;
+        let curTimeout;
+        function setProjectPreview(name, id) {
+            if (curSelected === id) return;
+            curSelected = id;
+
+            document
+                .getElementById("project-preview-container")
+                .classList.add("close-y");
+            document
+                .querySelector("#project-preview > a")
+                .classList.add("hide");
+
+            if (curTimeout) clearTimeout(curTimeout);
+            curTimeout = setTimeout(() => {
+                document.querySelector("#project-preview > h3").innerText =
+                    name;
+                document.querySelector("#project-preview > p").innerText =
+                    PROJECTS[id].description;
+                document.querySelector("#project-preview > a").href =
+                    `https://github.com/Kalilamodow/${id}`;
+                document
+                    .querySelector("#project-preview > a")
+                    .classList.remove("hide");
+
+                document
+                    .getElementById("project-preview-container")
+                    .classList.remove("close-y");
+            }, 750);
+        }
+
+        for (const button of Array.from(
+            document.querySelectorAll("#project-list > button"),
+        )) {
+            button.addEventListener("click", () =>
+                setProjectPreview(button.innerText, button.dataset.project),
+            );
+        }
+    </script>
+</html>
